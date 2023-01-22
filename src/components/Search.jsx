@@ -1,12 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { Form, Button, Container } from 'react-bootstrap';
 
-// IF !USER ROUTE TO '/LOGIN'
+function Search() {
+  const [vin, setVin] = useState('');
 
-function Search(props) {
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+    // FETCH REQUEST
+    // PASS RESULTS DOWN AS PROPS
+    // NAVIGATE TO RESULT PAGE
+  }
   return (
-    <div>
+    <Container>
       <h1>Search</h1>
-    </div>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group>
+          <Form.Label>Search a VIN</Form.Label>
+          <Form.Control
+            placeholder='Search a VIN Number'
+            type='text'
+            onChange={(e) => setVin(e.target.value)}
+          />
+        </Form.Group>
+        <Button type='submit'>Search</Button>
+      </Form>
+    </Container>
   );
 }
 
