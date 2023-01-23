@@ -1,9 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Container } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
+import Result from './Result';
+// import data from '../../src/data';
 
-function Results(props) {
-  return (
+function Results() {
+	let { vinnumber } = useParams();
+	const [isLoading, setIsLoading] = useState(false);
+	const [vinInfo, setVinInfo] = useState([]);
+	const url = `https://auto.dev/api/vin/${vinnumber}`;
+
+	async function fetchVIN() {
+		setIsLoading(true);
+		const response = await fetch(url);
+		const data = await response.json();
+		setVinInfo([data]);
+	}
+
+	useEffect(() => {
+		fetchVIN();
+		console.log(vinInfo)
+		setIsLoading(false);
+	}, [vinnumber]);
+
+	return (
 		<div>
-			<h1>Results</h1>
+			{isLoading ? (
+				<>
+					<p>Loading...</p>
+				</>
+			) : (
+				<>
+				<Result vinInfo={vinInfo} vinnumber={vinnumber}/>
+				</>
+			)}
 		</div>
 	);
 }
