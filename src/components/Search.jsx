@@ -1,14 +1,15 @@
 import React, {useState} from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 function Search() {
   const [vin, setVin] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (e) =>{
     e.preventDefault();
-    // FETCH REQUEST
-    // PASS RESULTS DOWN AS PROPS
     // NAVIGATE TO RESULT PAGE
+    navigate('/results/' + vin)
   }
   return (
     <Container>
