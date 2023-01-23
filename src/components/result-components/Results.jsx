@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import Result from './Result';
 // import data from '../../src/data';
@@ -19,17 +18,19 @@ function Results() {
 
 	useEffect(() => {
 		fetchVIN();
-		console.log(vinInfo)
 		setIsLoading(false);
 	}, [vinnumber]);
 
 	return (
 		<div>
-			{isLoading ? (
+			{isLoading ?
+			(
 				<>
 					<p>Loading...</p>
 				</>
-			) : (
+			)
+			:
+			(
 				<>
 				<Result vinInfo={vinInfo} vinnumber={vinnumber}/>
 				</>
