@@ -21,32 +21,37 @@ function Login(props) {
 			console.log(error)
 		})
 	}
-
   return (
-		<Container>
-			<h1>Login</h1>
-			<Form onSubmit={login}>
-				<Form.Group controlId='formEmail'>
-					<Form.Label> Email Address </Form.Label>
-					<Form.Control
-						type='email'
-						placeholder='example@mail.com'
-						value={email}
-						onChange={(e) => setEmail(e.target.value)}
-					/>
-				</Form.Group>
-				<Form.Group controlId='formPassword'>
-					<Form.Label> Password </Form.Label>
-					<Form.Control
-						type='password'
-						placeholder='Password'
-						value={password}
-						onChange={(e) => setPassword(e.target.value)}
-					/>
-				</Form.Group>
-				<Link to='/signup'>I'm not a member yet!</Link>
-				<Button type='submit'>Login</Button>
-			</Form>
+		<Container className='p-5'>
+			<Container
+				className='p-5 mx-auto my-5 rounded-5'
+				style={{ width: '600px', boxShadow: '0 0 5px black' }}>
+				<h1 className='text-center pt-5 pb-2'>Login</h1>
+				<Form onSubmit={login}>
+					<Form.Group className='my-3' controlId='formEmail'>
+						<Form.Label> Email Address </Form.Label>
+						<Form.Control
+							type='email'
+							placeholder='example@mail.com'
+							value={email}
+							onChange={(e) => setEmail(e.target.value)}
+						/>
+					</Form.Group>
+					<Form.Group className='my-3' controlId='formPassword'>
+						<Form.Label> Password </Form.Label>
+						<Form.Control
+							type='password'
+							placeholder='Password'
+							value={password}
+							onChange={(e) => setPassword(e.target.value)}
+						/>
+					</Form.Group>
+					<Container className='d-flex justify-content-between'>
+						<Link to='/signup'>I'm not a member yet!</Link>
+						<Button type='submit'>Login</Button>
+					</Container>
+				</Form>
+			</Container>
 		</Container>
 	);
 }

@@ -8,12 +8,10 @@ function Search() {
 
   const handleSubmit = (e) =>{
     e.preventDefault();
-    // NAVIGATE TO RESULT PAGE
     navigate('/results/' + vin)
   }
   return (
     <Container>
-      <h1>Search</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group>
           <Form.Label>Search a VIN</Form.Label>

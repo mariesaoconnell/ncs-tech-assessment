@@ -1,12 +1,14 @@
 import Search from "./Search";
+import { Container } from "react-bootstrap";
 
-function Home(props) {
+function Home() {
 
   return (
-    <>
-      <h1>Welcome to VIN Finder</h1>
+    <Container>
+      <h1> VIN Finder </h1>
       <Search />
-    </>
+    </Container>
+
   );
 }
 
