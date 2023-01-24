@@ -1,15 +1,17 @@
 import React, {useState, useEffect} from 'react';
+import { Container } from 'react-bootstrap';
 import MyCarousel from './Carousel';
 
-function GoogleSearch({vinInfo}) {
+function GoogleSearch({veh}) {
   const [images, setImages] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
 
-  // const searchKeyWord = ` ${vinInfo.years[0].year} ${vinInfo.make.name} ${vinInfo.model.name} `;
-  const searchKeyWord = 'car';
+  const searchKeyWord = ` ${veh.years[0].year} ${veh.make.name} ${veh.model.name} `;
   const url = `https://www.googleapis.com/customsearch/v1?key=AIzaSyDpjsfHaqS5t0Td6chDDH9o1t9EzPujZAg&cx=15a94f841333f4e8b&q=${searchKeyWord}&searchType=image`;
 
   async function getImages(){
+    setIsLoading(true);
     const response = await fetch(url);
     const data = await response.json();
     setImages(data.items)
@@ -18,13 +20,17 @@ function GoogleSearch({vinInfo}) {
   useEffect(()=>{
     getImages()
     console.log(images)
+    setIsLoading(false)
   }, [])
 
   return (
-    <div>
-      <h1>Google Search Results</h1>
-      <MyCarousel images={images} />
-    </div>
+    <>
+      {isLoading ? (<h1>Loading...</h1>):(
+        <Container>
+          <MyCarousel images={images} />
+        </Container>
+      )}
+    </>
   );
 }
 
