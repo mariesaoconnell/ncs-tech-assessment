@@ -1,11 +1,10 @@
 import { Form, Button, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { auth } from './firebase'
+import { auth } from './firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
 
-function Login(props) {
+function Login({ setAuthUser }) {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const navigate = useNavigate();
@@ -13,40 +12,51 @@ function Login(props) {
 	const login = (e) => {
 		e.preventDefault();
 		signInWithEmailAndPassword(auth, email, password)
-		.then((userCredential)=>{
-			console.log(userCredential)
-			navigate('/')
-		})
-		.catch((error)=>{
-			console.log(error)
-		})
-	}
+			.then((userCredential) => {
+				localStorage.setItem('userToken', userCredential.user.accessToken);
+				setAuthUser(userCredential.user);
+				navigate('/');
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
 
-  return (
-		<Container>
-			<h1>Login</h1>
-			<Form onSubmit={login}>
-				<Form.Group controlId='formEmail'>
-					<Form.Label> Email Address </Form.Label>
-					<Form.Control
-						type='email'
-						placeholder='example@mail.com'
-						value={email}
-						onChange={(e) => setEmail(e.target.value)}
-					/>
-				</Form.Group>
-				<Form.Group controlId='formPassword'>
-					<Form.Label> Password </Form.Label>
-					<Form.Control
-						type='password'
-						placeholder='Password'
-						value={password}
-						onChange={(e) => setPassword(e.target.value)}
-					/>
-				</Form.Group>
-				<Link to='/signup'>I'm not a member yet!</Link>
-				<Button type='submit'>Login</Button>
-			</Form>
+	return (
+		<Container className='p-5 vertically-align'>
+			<Container
+				className='p-5 mx-auto my-5 rounded-5'
+				style={{
+					width: '600px',
+					boxShadow: '0 0 10px 2px black',
+					backgroundColor: 'rgba(255, 255, 255, .25)'
+				}}>
+				<h1 className='text-center pt-5 pb-2'>Login</h1>
+				<Form onSubmit={login}>
+					<Form.Group className='my-3' controlId='formEmail'>
+						<Form.Label> Email Address </Form.Label>
+						<Form.Control
+							type='email'
+							placeholder='example@mail.com'
+							value={email}
+							onChange={(e) => setEmail(e.target.value)}
+						/>
+					</Form.Group>
+					<Form.Group className='my-3' controlId='formPassword'>
+						<Form.Label> Password </Form.Label>
+						<Form.Control
+							type='password'
+							placeholder='Password'
+							value={password}
+							onChange={(e) => setPassword(e.target.value)}
+						/>
+					</Form.Group>
+					<Container className='d-flex pb-5 justify-content-between'>
+						<Link to='/signup'>I'm not a member yet!</Link>
+						<Button type='submit'>Login</Button>
+					</Container>
+				</Form>
+			</Container>
 		</Container>
 	);
 }

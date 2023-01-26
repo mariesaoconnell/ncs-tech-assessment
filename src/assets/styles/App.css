@@ -1,0 +1,11 @@
+main {
+  height: 100vh;
+}
+
+.vertically-align {
+  margin: -10px 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
