@@ -18,16 +18,19 @@ function App() {
 	const [theme, setTheme] = useState('light');
 	const [authUser, setAuthUser] = useState(null);
 
+	// TOGGLES LIGHT AND DARK MODE ACROSS PAGES AND COMPONENTS
 	const toggleTheme = () => {
 		return setTheme((currentTheme) =>
 			currentTheme === 'light' ? 'dark' : 'light'
 		);
 	};
 
+	// PROTECTS THE '/HOME' AND '/RESULTS/:ID' ROUTES FROM NON-MEMBER USERS BY CHECKING LOCAL STORAGE FOR THE USER'S TOKEN AND APPLYING TERNARY LOGIC TO DETERMINE WHETHER THE USER HAS AUTHORIZATION TO VIEW THE PAGE ACCESSED
 	const ProtectedRoute = () => {
 		return localStorage.userToken ? <Outlet /> : <Navigate to='/login' />;
 	};
 
+	// LISTENS FOR CHANGES IN STATE FOR 'authUser'
 	useEffect(() => {
 		const listen = onAuthStateChanged(auth, (user) => {
 			if (user) {

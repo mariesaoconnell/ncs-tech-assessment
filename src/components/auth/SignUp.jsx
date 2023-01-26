@@ -8,6 +8,7 @@ function SignUp() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
+	// 'signup' IS THE FUNCTION RUN ON THE FORM'S SUBMISSION. WHEN THE FORM IS SUBMITTED, 'signup' PREVENTS A PAGE REFRESH AND USES FIREBASE'S 'createUserWithEmailAndPassword' TO CREATE A NEW USER WITH THE INFORMATION SUBMITTED IN THE FORM
 	const signup = (e) => {
 		e.preventDefault();
 		createUserWithEmailAndPassword(auth, email, password)
@@ -35,6 +36,7 @@ function SignUp() {
 							type='email'
 							placeholder='Example@mail.com'
 							onChange={(e) => setEmail(e.target.value)}
+							required
 						/>
 					</Form.Group>
 					<Form.Group className='my-3'>
@@ -43,6 +45,7 @@ function SignUp() {
 							type='password'
 							placeholder='Password'
 							onChange={(e) => setPassword(e.target.value)}
+							required
 						/>
 					</Form.Group>
 					<Container className='d-flex pb-5 justify-content-between'>

@@ -6,10 +6,12 @@ function Search() {
   const [vin, setVin] = useState('');
   const navigate = useNavigate();
 
+	// HANDLES FORM SUBMISSIONS, PREVENTS PAGE REFRESH, NAVIGATES USER TO RESULT PAGE
   const handleSubmit = (e) =>{
     e.preventDefault();
     navigate('/result/' + vin)
   }
+
   return (
 		<Container className='p-5'>
 			<Form
@@ -25,6 +27,9 @@ function Search() {
 								placeholder='Search a VIN Number'
 								type='text'
 								onChange={(e) => setVin(e.target.value)}
+								minLength='17'
+								maxLength='17'
+								required
 							/>
 						</Col>
 						<Col s='auto' lg='2'>

@@ -4,11 +4,16 @@ import Result from './Result';
 // import data from '../../src/data';
 
 function Results() {
-	let { vinnumber } = useParams();
-	const [isLoading, setIsLoading] = useState(false);
-	const [vinInfo, setVinInfo] = useState([]);
+	// UTILIZES 'useParams' HOOK TO GRAB THE VINNUMBER INPUT BY THE USER
+	const { vinnumber } = useParams();
+
+	// UTILIZES THE 'vinnumber' TO CREATE THE URL WHICH WILL BE USED IN THE 'fetchVIN' function
 	const url = `https://auto.dev/api/vin/${vinnumber}`;
 
+	const [isLoading, setIsLoading] = useState(false);
+	const [vinInfo, setVinInfo] = useState([]);
+
+	// ASYNCHRONOUS FUNCTION, UTILIZING THE URL TAILORED BY THE 'vinnumber' TO MAKE A GET REQUEST AND USES THE 'vinInfo' TO SET ITS STATE TO THE DATA RETURNED. 'vinInfo' IS THEN PASSED TO THE 'Result' COMPONENT, WHICH MAPS THE 'vinInfo' AND PASSES IT INTO RESULT TABLE, WHERE THE 'vinInfo' IS USED TO FILL A TABLE
 	async function fetchVIN() {
 		setIsLoading(true);
 		const response = await fetch(url);
@@ -16,6 +21,7 @@ function Results() {
 		setVinInfo([data]);
 	}
 
+	// UTILIZES THE 'vinnumber' TO DETERMINE WHEN TO MAKE FETCH REQUESTS
 	useEffect(() => {
 		fetchVIN();
 		setIsLoading(false);

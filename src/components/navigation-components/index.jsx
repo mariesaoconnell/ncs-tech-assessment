@@ -8,6 +8,7 @@ import ModeToggle from "./ModeToggle";
 function NavigationBar({toggleTheme, theme, authUser}) {
 	const navigate = useNavigate();
 
+	// UTILIZES FIREBASE'S SIGN OUT FUNCTION, ONCE THE USER IS SIGNED OUT LOCAL STORAGE WILL DELETE THE USER'S TOKEN AND NAVIGATE THE USER TO '/login' WHICH DOES NOT REQUIRE A USER TO BE LOGGED IN TO VIEW- PIVOTAL FOR 'ProtectedRoute's FUNCTIONALITY.
 	const userSignOut = () => {
 		signOut(auth)
 			.then(() => {

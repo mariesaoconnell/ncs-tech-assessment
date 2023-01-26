@@ -9,6 +9,7 @@ function Login({ setAuthUser }) {
 	const [password, setPassword] = useState('');
 	const navigate = useNavigate();
 
+	// 'login' IS THE FUNCTION RUN ON THE FORM'S SUBMISSION. WHEN THE FORM IS SUBMITTED, 'login' PREVENTS A PAGE REFRESH AND UTILIZES FIREBASE'S 'signInWithEmailAndPassword' TO SIGN IN THE USER, CREATE A 'userToken' IN LOCAL STORAGE (PIVOTAL FOR THE 'ProtectRoute' TO FUNCTION), SET THE STATE FOR AUTH USER (PIVOTAL FOR PROPERLY NAVIGATING ONCE THE USER IS LOGGED IN) AND NAVIGATES THE USER TO PROTECTED ROUTE ONCE SUCCESSFULLY LOGGED IN
 	const login = (e) => {
 		e.preventDefault();
 		signInWithEmailAndPassword(auth, email, password)
@@ -40,6 +41,7 @@ function Login({ setAuthUser }) {
 							placeholder='example@mail.com'
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
+							required
 						/>
 					</Form.Group>
 					<Form.Group className='my-3' controlId='formPassword'>
@@ -49,6 +51,7 @@ function Login({ setAuthUser }) {
 							placeholder='Password'
 							value={password}
 							onChange={(e) => setPassword(e.target.value)}
+							required
 						/>
 					</Form.Group>
 					<Container className='d-flex pb-5 justify-content-between'>
