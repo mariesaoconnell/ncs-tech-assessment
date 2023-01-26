@@ -8,11 +8,13 @@ function Search() {
 
   const handleSubmit = (e) =>{
     e.preventDefault();
-    navigate('/results/' + vin)
+    navigate('/result/' + vin)
   }
   return (
-		<Container>
-			<Form onSubmit={handleSubmit}>
+		<Container className='p-5'>
+			<Form
+				className="p-5"
+				onSubmit={handleSubmit}>
 				<Form.Group>
 					<Row>
 						<Col s='auto' lg='2'>
