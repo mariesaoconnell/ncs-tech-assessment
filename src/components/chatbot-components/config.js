@@ -5,7 +5,12 @@ import BotAvatar from './BotAvatar';
 const config = {
 	initialMessages: [
 		createChatBotMessage(
-			`Hi, I'm Finn, VIN Finder's AI! 👋 For a list of questions you can ask me, say "FAQs". `
+			(
+				<>
+					<h5>Hi, I'm Finn, VIN Finder's AI! 👋</h5>
+					<p>For a list of questions you can ask me, say "FAQs".</p>
+				</>
+			)
 		),
 	],
 	customComponents: {

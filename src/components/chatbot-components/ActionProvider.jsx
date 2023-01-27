@@ -19,7 +19,14 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 	};
   const handleFAQS = () => {
 		const botMessage = createChatBotMessage(
-			'You can ask me: "What are the properties of a windshield", "How many characters are in a VIN number", "Can the crack in my windshield be fixed", "Where can I find my VIN", or just say "Hello"!'
+			<>
+				<h5>You can ask me:</h5>
+				<p>"What are the properties of a windshield"</p>
+				<p>"How many characters are in a VIN number"</p>
+				<p>"Can the crack in my windshield be fixed"</p>
+				<p>"Where can I find my VIN"</p>
+				<p>Or simply say "Hello"</p>
+			</>
 		);
 
 		setState((prev) => ({
