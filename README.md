@@ -1,14 +1,18 @@
 # VIN FINDER
 
 ## APP DESCRIPTION
-  VIN Finder is a web app that allows users to search VINs for general information about the vehicle and pictures.
+  VIN Finder is a web app that allows users to search VINs and returns general information about the vehicle, including the year, make, model, class, photos, etc.
 
 ## TECHNOLOGIES USED
 
 VIN Finder is a REACTJS Web APP that utilizes:
- - Bootstrap - for styling
- - Firebase - for Authentication
- - React Router - for routing endpoints and protecting paths that require user authorization
+ - Bootstrap - used for building and styling multiple components.
+ - Firebase - used for Authentication.
+ - React Router - used for routing endpoints and protecting paths that require user authorization.
+ - React Switch - used to create the UI which users can use to toggle 'dark' and 'light' mode.
+ - React Chatbot Kit - used to create the FAQ Bot, which users can interact with and ask specific questions. 
+ - Programmable Search Engine API - used for the rendering of vehicle photos, based on the VIN input by the user. 
+ - Auto Dev API - used for the rendering of vehicle information, based on the VIN input by the user.
 
 ## INSTALLATION
 
