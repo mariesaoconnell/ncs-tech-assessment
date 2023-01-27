@@ -41,3 +41,10 @@ Prefer to use the web-based application and not worry about environment variable
 
 You can access VIN Finder by clicking [HERE](https://vinfinder.netlify.app).
 
+___
+## Test User
+___
+
+If you wish to test this app without signing up, you can use the following credentials:
+> <b>email:</b> test@email.com <br/>
+> <b>password:</b> 123456789
