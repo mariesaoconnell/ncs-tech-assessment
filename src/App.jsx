@@ -3,14 +3,15 @@ import NavigationBar from './components/navigation-components';
 import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './components/auth/firebase';
-import './assets/styles/App.css';
 import Results from './components/result-components';
 import Login from './components/auth/Login';
 import Home from './components/home-components';
 import SignUp from './components/auth/SignUp';
 import Error from './components/error-components/Error';
-import './assets/styles/ModeToggle.css';
 
+import './assets/styles/static-styles/App.css';
+import './assets/styles/static-styles/ModeToggle.css';
+import './assets/styles/media-queries/MediaQueries.css';
 
 export const ThemeContext = createContext('light');
 

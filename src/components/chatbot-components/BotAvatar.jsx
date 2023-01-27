@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../assets/styles/ChatBot.css';
+import '../../assets/styles/static-styles/ChatBot.css';
 
 function BotAvatar(props) {
   return (

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel, Container, Image } from 'react-bootstrap';
+import '../../assets/styles/static-styles/Carousel.css';
 
 function MyCarousel({images}) {
   return (
@@ -7,12 +8,11 @@ function MyCarousel({images}) {
 			<Carousel className='carousel-fade'>
 				{images.map((image) => {
 					return (
-						<Carousel.Item style={{ overflow: 'hidden' }}>
+						<Carousel.Item className='carousel-styling'>
 							<Image
 								alt={image.title}
-								className='d-block rounded-5 fluid'
+								className='d-block fluid image-styling'
 								src={image.link}
-								style={{height: "500px", width:"700px", objectFit:"cover"}}
 							/>
 						</Carousel.Item>
 					);

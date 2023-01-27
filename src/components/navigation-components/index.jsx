@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import ModeToggle from "./ModeToggle";
 import MyBot from '../chatbot-components';
 
-import '../../assets/styles/Navbar.css'
+import '../../assets/styles/static-styles/Navbar.css';
 
 
 function NavigationBar({toggleTheme, theme, authUser}) {

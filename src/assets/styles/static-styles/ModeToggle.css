@@ -1,16 +1,16 @@
-#light{
-  background-color: white !important;
+#light main{
+  background-color: rgb(0, 0, 0) !important;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  background-image: url('../images/waves-light.svg');
+  background-image: url('../../images/waves-light.svg');
   transition: all 0.50s linear;
 }
 
-#dark {
+#dark main{
   color: white;
-  background-image: url('../images/waves-dark.svg');
+  background-image: url('../../images/waves-dark.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

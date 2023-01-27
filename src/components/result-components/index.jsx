@@ -15,9 +15,15 @@ function Results({setError}) {
 	async function fetchVIN() {
 			setIsLoading(true);
 			const response = await fetch(url);
+			console.log('response',response)
 			const data = await response.json();
 			if(data.status === "BAD_REQUEST" || data.status === "NOT_FOUND"){
-			setError(data.message);
+			if(data.message){
+				setError(data.message);
+			}
+			else {
+				console.log('Issue fetching VIN info.')
+			}
 			navigate('/error');
 			}
 			setVinInfo([data]);
@@ -65,7 +71,11 @@ function Results({setError}) {
 						</Breadcrumb>
 					</Container>
 
-					<Result vinInfo={vinInfo} vinnumber={vinnumber} />
+					<Result
+					vinInfo={vinInfo}
+					vinnumber={vinnumber}
+					setError={setError}
+					/>
 				</Container>
 			)}
 		</div>

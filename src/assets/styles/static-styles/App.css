@@ -1,0 +1,35 @@
+@font-face {
+  font-family: Hunters;
+  src: url('../../fonts/Hunters.otf');
+}
+
+@font-face {
+  font-family: times-new-romance;
+  src: url('../../fonts/Times\ New\ Romance.otf');
+}
+
+main {
+  height: 100vh;
+}
+
+body {
+  padding-top: 55px;
+  /* overflow: hidden; */
+}
+
+.hunters {
+  font-family: Hunters;
+}
+
+.times {
+  font-family: times-new-romance;
+}
+
+.vertically-align {
+  margin: -10px 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
