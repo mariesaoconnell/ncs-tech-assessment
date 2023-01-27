@@ -15,7 +15,7 @@ main {
 
 body {
   padding-top: 55px;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .hunters {
