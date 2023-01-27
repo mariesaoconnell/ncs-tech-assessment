@@ -25,7 +25,7 @@ function SignUp() {
 				className='p-5 mx-auto my-5 rounded-5'
 				style={{
 					width: '600px',
-					boxShadow: '0 0 10px 2px black',
+					boxShadow: '0 0 10px 6px rgba(0, 0, 0, 0.33)',
 					backgroundColor: 'rgba(255, 255, 255, .25)',
 				}}>
 				<h1 className='text-center pt-5 pb-2 hunters' style={{ fontSize: '100px' }}>

@@ -3,19 +3,19 @@ import React from 'react';
 const MessageParser = ({ children, actions }) => {
 	const parse = (message) => {
 		if(message.toLowerCase().includes('hello')){
-      actions.handleHello();
+      return actions.handleHello();
     }
 		if(message.toLowerCase().includes('what are the properties of a windshield')){
-      actions.handleWindshield();
+     return actions.handleWindshield();
     }
 		if(message.toLowerCase().includes('faqs')){
-      actions.handleFAQS();
+      return actions.handleFAQS();
     }
 		if(message.toLowerCase().includes('how many characters are in a vin number')){
-      actions.handleVIN();
+      return actions.handleVIN();
     }
-		if(message.toLowerCase().includes('')){
-      actions.handleOther();
+		else{
+      return actions.handleOther();
     }
 	};
 

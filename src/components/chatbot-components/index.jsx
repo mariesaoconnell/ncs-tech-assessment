@@ -1,4 +1,4 @@
-import { Button, Container, Modal } from 'react-bootstrap';
+import { Container, Modal } from 'react-bootstrap';
 
 import Chatbot from 'react-chatbot-kit';
 import config from '../chatbot-components/config';
@@ -17,7 +17,9 @@ const MyBot = ({handleClose, show}) => {
 				onHide={handleClose}
 				size='sm'
 				centered>
-				<Modal.Header closeButton></Modal.Header>
+				<Modal.Header closeButton>
+					<h2 className='times'>FAQ Bot</h2>
+				</Modal.Header>
 				<Modal.Body className='d-flex justify-content-center'>
 					<Chatbot
 						config={config}

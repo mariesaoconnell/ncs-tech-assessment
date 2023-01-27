@@ -8,7 +8,7 @@ import Results from './components/result-components';
 import Login from './components/auth/Login';
 import Home from './components/home-components';
 import SignUp from './components/auth/SignUp';
-
+import Error from './components/error-components/Error';
 import './assets/styles/ModeToggle.css';
 
 
@@ -17,7 +17,7 @@ export const ThemeContext = createContext('light');
 function App() {
 	const [theme, setTheme] = useState('light');
 	const [authUser, setAuthUser] = useState(null);
-
+	const [error, setError] = useState('');
 	// TOGGLES LIGHT AND DARK MODE ACROSS PAGES AND COMPONENTS
 	const toggleTheme = () => {
 		return setTheme((currentTheme) =>
@@ -66,15 +66,20 @@ function App() {
 						/>
 						<Route element={<ProtectedRoute authUser={authUser} />}>
 							<Route path='/' element={<Home />} />
-							<Route path='/result/:vinnumber' element={<Results />} />
+							<Route
+								path='/result/:vinnumber'
+								element={<Results setError={setError} />}
+							/>
 						</Route>
 						<Route
 							path='*'
 							element={
-								<h1 className='text-center vertically-align'>
-									Oops, wrong page: 404!
-								</h1>
+								<Error message={'This page does not exist!'}/>
 							}
+						/>
+						<Route
+							path='/error'
+							element={<Error error={error}/>}
 						/>
 					</Routes>
 				</main>

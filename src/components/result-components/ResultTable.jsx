@@ -5,7 +5,11 @@ import GoogleSearch from '../image-search-components';
 
 function ResultTable({vinnumber, veh}) {
   return (
-		<Container className='vertically-align result-style p-5 rounded-5'>
+		<Container
+			className='vertically-align result-style p-5 rounded-5'
+			style={{
+				boxShadow: '0 0 10px 6px rgba(0, 0, 0, 0.33)',
+			}}>
 			<h1 className='text-center pb-4 times'>
 				Results for <em>{vinnumber}</em>
 			</h1>
