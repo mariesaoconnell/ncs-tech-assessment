@@ -14,6 +14,12 @@ const MessageParser = ({ children, actions }) => {
 		if(message.toLowerCase().includes('how many characters are in a vin number')){
       return actions.handleVIN();
     }
+		if(message.toLowerCase().includes('can the crack in my windshield be fixed')){
+			return actions.handleCrack();
+		}
+		if(message.toLowerCase().includes('where can i find my vin')){
+			return actions.handleVinLocation();
+		}
 		else{
       return actions.handleOther();
     }
