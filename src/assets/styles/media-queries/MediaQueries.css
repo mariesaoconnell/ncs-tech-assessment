@@ -1,0 +1,21 @@
+@media screen and (max-device-width: 600px) and (orientation: portrait) {
+  .auth-form-styling{
+    box-shadow: none;
+    background-color: transparent;
+  }
+  .result-table-styling{
+    box-shadow: none;
+    background-color: transparent;
+    padding: -20px;
+  }
+  .image-styling {
+    height: 200px;
+    width: 400px;
+  }
+  .row{
+    display: flexbox;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+}
