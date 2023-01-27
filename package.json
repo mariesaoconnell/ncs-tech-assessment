@@ -10,6 +10,7 @@
     "dotenv": "^16.0.3",
     "fetch": "^1.1.0",
     "firebase": "^9.16.0",
+    "formik": "^2.2.9",
     "install": "^0.13.0",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
