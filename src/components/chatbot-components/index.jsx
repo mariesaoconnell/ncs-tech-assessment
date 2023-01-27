@@ -12,7 +12,7 @@ const MyBot = ({handleClose, show}) => {
 	return (
 		<Container id='bottom'>
 			<Modal
-				aria-labelledby='contained-modal-title-vcenter'
+				aria-labelledby='FAQ Bot Modal'
 				show={show}
 				onHide={handleClose}
 				size='sm'

@@ -18,7 +18,9 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 		}));
 	};
   const handleFAQS = () => {
-		const botMessage = createChatBotMessage('You can ask me: "What are the properties of a windshield", "How many characters are in a VIN number"');
+		const botMessage = createChatBotMessage(
+			'You can ask me: "What are the properties of a windshield", "How many characters are in a VIN number", "Can the crack in my windshield be fixed", "Where can I find my VIN", or just say "Hello"!'
+		);
 
 		setState((prev) => ({
 			...prev,
@@ -28,6 +30,26 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
   const handleOther = () => {
 		const botMessage = createChatBotMessage(
 			`I'm sorry, I don't have an answer for that. What I'd recommend is sending an email to fake@email.com and they can get you the answer!`
+		);
+
+		setState((prev) => ({
+			...prev,
+			messages: [...prev.messages, botMessage],
+		}));
+	};
+  const handleCrack = () => {
+		const botMessage = createChatBotMessage(
+			`As a general rule of thumb, cracks that can fit beneath a dollar bill can usually be repaired. If a chip is small enough (usually under 2 inches) and shallow enough (usually under 3/8 of an inch), repairing it may be an option.`
+		);
+
+		setState((prev) => ({
+			...prev,
+			messages: [...prev.messages, botMessage],
+		}));
+	};
+  const handleVinLocation= () => {
+		const botMessage = createChatBotMessage(
+			`On the driver's side dashboard – stand outside the vehicle and look at the corner where the dashboard meets the windshield. In the driver's side door or door jamb – the VIN is usually printed on a sticker in that location.`
 		);
 
 		setState((prev) => ({
@@ -51,8 +73,14 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 			{React.Children.map(children, (child) => {
 				return React.cloneElement(child, {
 					actions: {
-            handleHello, handleWindshield, handleFAQS, handleVIN, handleOther
-          },
+						handleHello,
+						handleWindshield,
+						handleFAQS,
+						handleVIN,
+						handleCrack,
+						handleVinLocation,
+						handleOther,
+					},
 				});
 			})}
 		</div>
