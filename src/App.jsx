@@ -71,7 +71,9 @@ function App() {
 						<Route
 							path='*'
 							element={
-								<h1 className='text-center my-auto'>Oops, wrong page: 404!</h1>
+								<h1 className='text-center vertically-align'>
+									Oops, wrong page: 404!
+								</h1>
 							}
 						/>
 					</Routes>

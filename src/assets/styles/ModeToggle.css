@@ -5,13 +5,36 @@
   background-size: cover;
   background-attachment: fixed;
   background-image: url('../images/waves-light.svg');
-  transition: all 0.50s linear;
+  /* transition: all 0.50s linear; */
 }
 #dark {
+  color: white;
   background-image: url('../images/waves-dark.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  transition: all 0.50s linear;
+  /* transition: all 0.50s linear; */
+}
+
+#dark a:after{
+  background: white;
+}
+
+#light table {
+  color: black;
+  border: 2px solid white;
+}
+
+#dark table {
+  color: white;
+  border: 3px solid white;
+}
+
+#light .result-style {
+  background-color: rgba(255, 255, 255, .30);
+}
+
+#dark .result-style {
+  background-color: rgba(0, 0, 0, 0.3);
 }

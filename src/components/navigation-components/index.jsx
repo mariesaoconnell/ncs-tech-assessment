@@ -24,16 +24,27 @@ function NavigationBar({toggleTheme, theme, authUser}) {
 			expand='lg'
 			fixed='top'>
 			{authUser ? (
-				<Container>
-					<Navbar.Brand
-						className={theme === 'light' ? 'text-dark' : 'text-light'}>
+				<Container className='times'>
+					<Navbar.Brand className={theme === 'light' ? 'text-dark' : 'text-light'}>
 						<h3>{`Welcome ${authUser.email}`}</h3>
 					</Navbar.Brand>
-					<Nav.Link href='/'>Home</Nav.Link>
-					<Nav.Link onClick={userSignOut}>Logout</Nav.Link>
-					<Nav.Link>
-						<ModeToggle toggleTheme={toggleTheme} theme={theme} />
+					<Nav.Link
+						href='/'
+						style={{fontSize:"25px"}}
+						className={theme === 'light' ? 'text-dark' : 'text-light'}
+					>
+						Home
 					</Nav.Link>
+					<Nav.Link
+						onClick={userSignOut}
+						style={{fontSize:"25px"}}
+						className={theme === 'light' ? 'text-dark' : 'text-light'}
+					>
+						Logout
+					</Nav.Link>
+					<Nav>
+						<ModeToggle toggleTheme={toggleTheme} theme={theme} />
+					</Nav>
 				</Container>
 			) : (
 				<Container>

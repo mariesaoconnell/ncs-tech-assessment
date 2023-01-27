@@ -14,16 +14,17 @@ function Search() {
 
   return (
 		<Container className='p-5'>
-			<Form
-				className="p-5"
-				onSubmit={handleSubmit}>
+			<Form className='p-5' onSubmit={handleSubmit}>
 				<Form.Group>
 					<Row>
 						<Col s='auto' lg='2'>
-							<Form.Label>Search a VIN</Form.Label>
+							<Form.Label className='times' style={{ fontSize: '25px' }}>
+								Search a VIN
+							</Form.Label>
 						</Col>
 						<Col>
 							<Form.Control
+								className='rounded-5'
 								placeholder='Search a VIN Number'
 								type='text'
 								onChange={(e) => setVin(e.target.value)}
@@ -32,8 +33,13 @@ function Search() {
 								required
 							/>
 						</Col>
-						<Col s='auto' lg='2'>
-							<Button type='submit'>Search</Button>
+						<Col s='auto' lg='1'>
+							<Button
+								type='submit'
+								className='rounded-5 px-4'
+							>
+								Search
+							</Button>
 						</Col>
 					</Row>
 				</Form.Group>

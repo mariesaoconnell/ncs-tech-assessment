@@ -7,7 +7,7 @@ function Result({vinInfo, vinnumber}) {
 	return (
 		<Container>
       {vinInfo.map((veh)=>{
-        return <ResultTable veh={veh} vinnumber={vinnumber}/>
+        return <ResultTable key={vinnumber} veh={veh} vinnumber={vinnumber}/>
       })}
 		</Container>
 	);

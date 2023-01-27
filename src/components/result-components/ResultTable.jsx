@@ -5,15 +5,17 @@ import GoogleSearch from '../image-search-components';
 
 function ResultTable({vinnumber, veh}) {
   return (
-		<Container className='vertically-align'>
-			<h1 className='text-center pb-4'>Results for {vinnumber}</h1>
+		<Container className='vertically-align result-style p-5 rounded-5'>
+			<h1 className='text-center pb-4 times'>
+				Results for <em>{vinnumber}</em>
+			</h1>
 			<Row>
 				<Col>
 					<GoogleSearch veh={veh} />
 				</Col>
-				<Col>
+				<Col className='px-5'>
 					<Container>
-						<Table striped bordered hover>
+						<Table bordered hover className='text-center rounded'>
 							<thead>
 								<tr>
 									<th></th>
