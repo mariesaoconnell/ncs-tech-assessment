@@ -26,9 +26,12 @@ function SignUp() {
 				style={{
 					width: '600px',
 					boxShadow: '0 0 10px 2px black',
-					backgroundColor: 'rgba(255, 255, 255, .25)'
+					backgroundColor: 'rgba(255, 255, 255, .25)',
 				}}>
-				<h1 className='text-center pt-5 pb-2'> Sign Up </h1>
+				<h1 className='text-center pt-5 pb-2 hunters' style={{ fontSize: '100px' }}>
+					{' '}
+					Sign Up{' '}
+				</h1>
 				<Form onSubmit={signup}>
 					<Form.Group className='my-3'>
 						<Form.Label>Email Address</Form.Label>

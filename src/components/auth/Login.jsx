@@ -32,7 +32,7 @@ function Login({ setAuthUser }) {
 					boxShadow: '0 0 10px 2px black',
 					backgroundColor: 'rgba(255, 255, 255, .25)'
 				}}>
-				<h1 className='text-center pt-5 pb-2'>Login</h1>
+				<h1 className='text-center pt-5 pb-2 hunters' style={{fontSize:"100px"}}>Login</h1>
 				<Form onSubmit={login}>
 					<Form.Group className='my-3' controlId='formEmail'>
 						<Form.Label> Email Address </Form.Label>

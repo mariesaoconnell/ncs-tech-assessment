@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Breadcrumb, Container, Spinner } from 'react-bootstrap';
 import Result from './Result';
-// import data from '../../src/data';
+
 
 function Results() {
 	// UTILIZES 'useParams' HOOK TO GRAB THE VINNUMBER INPUT BY THE USER

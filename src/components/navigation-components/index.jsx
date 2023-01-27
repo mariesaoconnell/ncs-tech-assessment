@@ -47,7 +47,6 @@ function NavigationBar({toggleTheme, theme, authUser}) {
 							className={theme === 'light' ? 'text-dark' : 'text-light'}>
 							FAQ Bot
 						</Nav.Link>
-
 						<Nav.Link
 							onClick={userSignOut}
 							style={{ fontSize: '25px' }}
@@ -59,7 +58,7 @@ function NavigationBar({toggleTheme, theme, authUser}) {
 						</Nav>
 					</Container>
 				) : (
-					<Container>
+					<Container className='times'>
 						<Navbar.Brand
 							className={theme === 'light' ? 'text-dark' : 'text-light'}>
 							VIN Finder
