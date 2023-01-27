@@ -41,6 +41,3 @@ Prefer to use the web-based application and not worry about environment variable
 
 You can access VIN Finder by clicking [HERE](https://vinfinder.netlify.app).
 
-___
-## TUTORIAL
-___
